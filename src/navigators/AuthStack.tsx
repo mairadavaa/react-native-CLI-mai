@@ -11,19 +11,20 @@ const AuthStack = createNativeStackNavigator();
 export const AuthStackComponent = () => {
   return (
     <AuthStack.Navigator>
-      <AuthStack.Screen name="otpscreen" component={OTP} />
+      <AuthStack.Screen name="otpscreen" component={OTP} options={{ headerShown: false }} />
       <AuthStack.Screen
         name="login"
         component={Login}
-        options={({ navigation }) => ({
-          headerLeft: () => {
-            return (
-              <TouchableOpacity onPress={() => navigation.navigate("login")}>
-                <Text>weolcome</Text>
-              </TouchableOpacity>
-            );
-          },
-        })}
+        // options={({ navigation }) => ({
+        //   headerLeft: () => {
+        //     return (
+        //       <TouchableOpacity onPress={() => navigation.navigate("login")}>
+        //         <Text>weolcome</Text>
+        //       </TouchableOpacity>
+        //     );
+        //   },
+        // })}
+        options={{ headerShown: false }}
       />
       <AuthStack.Screen
         name="mainscreen"

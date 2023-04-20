@@ -5,26 +5,27 @@ import {
   SafeAreaView, Text, View,
 } from 'react-native';
 
-import { styled } from 'nativewind';
+
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '../../App';
 
-const StyledView = styled(View)
-const StyledText = styled(Text)
 
+export type OTPScreen =  NativeStackNavigationProp <RootStackParamList, 'otpscreen'>;
 export default function OTP() {
 
-  const navigator = useNavigation();
+  const navigator = useNavigation<OTPScreen>();
   return (
     <SafeAreaView >
-      <StyledView className="m-10 p-2">
+      <View className="m-10 p-2">
       <Pressable
        onPress={() => {
          navigator.navigate("login")
        }}>
-        <StyledText>welcome</StyledText>
+        <Text>welcome</Text>
        </Pressable>
       
-      </StyledView>
+      </View>
 
     </SafeAreaView>
   );
