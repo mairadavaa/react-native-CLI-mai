@@ -11,15 +11,15 @@ const AuthStack = createNativeStackNavigator();
 export const AuthStackComponent = () => {
   return (
     <AuthStack.Navigator>
-      <AuthStack.Screen name="login" component={Login} />
+      <AuthStack.Screen name="otpscreen" component={OTP} />
       <AuthStack.Screen
-        name="otpscreen"
-        component={OTP}
+        name="login"
+        component={Login}
         options={({ navigation }) => ({
           headerLeft: () => {
             return (
               <TouchableOpacity onPress={() => navigation.navigate("login")}>
-                <Text>back to login</Text>
+                <Text>weolcome</Text>
               </TouchableOpacity>
             );
           },
